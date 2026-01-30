@@ -1,0 +1,8 @@
+# Robots.txt for Dual Axis
+# https://www.dual-axis.tech/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.dual-axis.tech/sitemap.xml

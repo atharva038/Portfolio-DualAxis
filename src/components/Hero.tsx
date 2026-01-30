@@ -24,10 +24,21 @@ export default function Hero() {
           </div>
           
           <div className="order-first lg:order-last">
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-[#E8E2D9] dark:bg-[#1F1F23] flex items-center justify-center transition-colors duration-300">
-              <span className="text-sm text-[#A8A29E] dark:text-[#4A4A4E] font-medium">
-                Website preview placeholder
-              </span>
+            <div 
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#E8E2D9] dark:bg-[#1F1F23] transition-colors duration-300 cursor-pointer group"
+              onClick={() => window.open('https://photographer-portfolio-mauve-nine.vercel.app', '_blank')}
+            >
+              <iframe
+                src="https://photographer-portfolio-mauve-nine.vercel.app"
+                className="absolute inset-0 w-full h-full pointer-events-none transition-transform duration-300 group-hover:scale-105"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  border: 'none'
+                }}
+                title="Featured Project - Serene Photography"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
