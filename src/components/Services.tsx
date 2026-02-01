@@ -21,6 +21,39 @@ const services = [
   }
 ];
 
+const advancedCapabilities = [
+  {
+    title: 'Store Management',
+    description: 'Complete point-of-sale systems with product catalogs, pricing, and sales tracking.',
+    icon: '🏪'
+  },
+  {
+    title: 'Inventory Control',
+    description: 'Real-time stock monitoring, automated alerts, and supplier management systems.',
+    icon: '📦'
+  },
+  {
+    title: 'Staff Management',
+    description: 'Employee scheduling, attendance tracking, and performance monitoring tools.',
+    icon: '👥'
+  },
+  {
+    title: 'Customer Relations',
+    description: 'CRM systems, booking management, appointment scheduling, and customer database.',
+    icon: '🤝'
+  },
+  {
+    title: 'Analytics & Reports',
+    description: 'Business insights, sales reports, revenue tracking, and data visualization dashboards.',
+    icon: '📊'
+  },
+  {
+    title: 'Payment Integration',
+    description: 'Secure payment gateways, invoice generation, and automated billing systems.',
+    icon: '💳'
+  }
+];
+
 export default function Services() {
   return (
     <section id="services" className="py-16 md:py-24 lg:py-32">
@@ -34,7 +67,8 @@ export default function Services() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* Core Services */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto mb-20 md:mb-28 lg:mb-32">
           {services.map((service, index) => (
             <div 
               key={index} 
@@ -70,6 +104,69 @@ export default function Services() {
               <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-[#C07A3D]/0 to-transparent group-hover:from-[#C07A3D]/10 dark:group-hover:from-[#C6A75E]/10 transition-all duration-500 rounded-tl-full pointer-events-none"></div>
             </div>
           ))}
+        </div>
+
+        {/* Advanced Full-Stack Capabilities */}
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12 md:mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C07A3D]/10 dark:bg-[#C6A75E]/10 text-[#C07A3D] dark:text-[#C6A75E] text-sm font-medium mb-6">
+              <span className="inline-block w-2 h-2 bg-[#C07A3D] dark:bg-[#C6A75E] rounded-full animate-pulse"></span>
+              Full-Stack Solutions
+            </div>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#3F3A34] dark:text-white mb-6 tracking-tight leading-[1.1]">
+              Beyond beautiful websites
+            </h3>
+            <p className="text-lg md:text-xl text-[#6B645C] dark:text-[#B3B3B3] leading-relaxed max-w-3xl mx-auto">
+              We're currently focused on portfolios and showcase websites, but we also build comprehensive business management systems tailored to your operational needs.
+            </p>
+          </div>
+
+          {/* Advanced Capabilities Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {advancedCapabilities.map((capability, index) => (
+              <div 
+                key={index}
+                className="group relative p-6 lg:p-8 bg-gradient-to-br from-[#FAF7F2] to-[#F5F0E8] dark:from-[#18181B] dark:to-[#1F1F23] rounded-2xl border border-[#E6DED3] dark:border-[#2A2A2E] transition-all duration-300 hover:border-[#C07A3D] dark:hover:border-[#C6A75E] hover:shadow-xl hover:shadow-[#C07A3D]/5 dark:hover:shadow-[#C6A75E]/5 hover:-translate-y-1 cursor-pointer"
+              >
+                {/* Icon */}
+                <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110">
+                  {capability.icon}
+                </div>
+                
+                {/* Title */}
+                <h4 className="text-xl font-medium text-[#3F3A34] dark:text-white mb-3 group-hover:text-[#C07A3D] dark:group-hover:text-[#C6A75E] transition-colors duration-300">
+                  {capability.title}
+                </h4>
+                
+                {/* Description */}
+                <p className="text-sm lg:text-base text-[#6B645C] dark:text-[#B3B3B3] leading-relaxed">
+                  {capability.description}
+                </p>
+
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C07A3D]/0 to-transparent group-hover:via-[#C07A3D]/50 dark:group-hover:via-[#C6A75E]/50 transition-all duration-500 rounded-b-2xl"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="mt-16 md:mt-20 text-center">
+            <div className="inline-flex flex-col items-center gap-4 p-8 lg:p-10 bg-gradient-to-br from-[#C07A3D]/5 to-transparent dark:from-[#C6A75E]/5 rounded-3xl border border-[#C07A3D]/20 dark:border-[#C6A75E]/20">
+              <p className="text-lg md:text-xl text-[#3F3A34] dark:text-white font-medium">
+                Need a custom business solution?
+              </p>
+              <p className="text-base text-[#6B645C] dark:text-[#B3B3B3] max-w-2xl">
+                From simple booking systems to complex inventory management, we build scalable solutions that grow with your business.
+              </p>
+              <a 
+                href="#contact" 
+                className="inline-flex items-center gap-2 px-8 py-4 text-[15px] font-medium rounded-xl bg-[#C07A3D] hover:bg-[#A86930] dark:bg-[#C6A75E] dark:hover:bg-[#D4B86A] text-white transition-all duration-200 hover:-translate-y-0.5 mt-2"
+              >
+                Discuss your project
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

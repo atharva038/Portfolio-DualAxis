@@ -7,9 +7,9 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Bloom Floristry',
+    title: 'Beauty Parlor',
     category: 'Business Website',
-    link: null
+    link: 'https://beauty-parler.vercel.app/'
   }
 ];
 
