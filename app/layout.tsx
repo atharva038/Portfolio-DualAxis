@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Geist } from 'next/font/google';
 import { ThemeProvider } from '@/context/ThemeContext';
 import './globals.css';
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,7 +30,7 @@ export const metadata: Metadata = {
     'custom websites',
     'responsive design',
   ],
-  authors: [{ name: 'Dual Axis - Atharva & Nandkishor' }],
+  authors: [{ name: 'Dual Axis - Atharva & Rameshwar Sarkale' }],
   robots: 'index, follow',
   alternates: {
     canonical: '/',
@@ -94,7 +97,7 @@ const structuredData = {
     },
     {
       '@type': 'Person',
-      name: 'Nandkishor Jadhav',
+      name: 'Rameshwar Sarkale',
       jobTitle: 'Developer',
     },
   ],
@@ -126,7 +129,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
       <head>
         <script
           type="application/ld+json"

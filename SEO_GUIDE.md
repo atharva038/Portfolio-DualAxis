@@ -14,7 +14,7 @@
 <title>Dual Axis — Web Development & Design Studio</title>
 <meta name="description" content="..." />
 <meta name="keywords" content="web development, web design, ..." />
-<meta name="author" content="Dual Axis - Atharva & Nandkishor" />
+<meta name="author" content="Dual Axis - Atharva & Rameshwar Sarkale" />
 <meta name="robots" content="index, follow" />
 ```
 
