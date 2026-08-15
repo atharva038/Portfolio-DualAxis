@@ -1,5 +1,7 @@
+'use client';
+
 import { useState, useEffect } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
@@ -174,7 +176,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden mt-2">
           <div className="mx-auto max-w-5xl bg-gradient-to-br from-[#FAF7F2]/95 to-[#F5EFE6]/92 dark:bg-gradient-to-br dark:from-[#18181B]/95 dark:to-[#0E0E10]/92 backdrop-blur-xl border border-[#E6DED3]/40 dark:border-[#2A2A2E]/40 rounded-2xl shadow-lg shadow-black/5 dark:shadow-black/30 p-4">

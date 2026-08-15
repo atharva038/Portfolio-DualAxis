@@ -9,7 +9,7 @@
 ✅ Title: "Dual Axis — Web Development & Design Studio"  
 ✅ Description: Clear, concise, under 160 characters  
 ✅ Keywords: web development, web design, freelance, portfolio, business websites  
-✅ Author: Dual Axis - Atharva & Nandkishor  
+✅ Author: Dual Axis - Atharva & Rameshwar Sarkale  
 ✅ Robots: index, follow (allows search engines to index)  
 
 ### 2. **Social Media Sharing (Complete)**
@@ -32,7 +32,7 @@
 ### 5. **Structured Data Includes:**
 ✅ Business type: Professional Service  
 ✅ Contact info: Phone (+91-9156906881)  
-✅ Team members: Atharva & Nandkishor  
+✅ Team members: Atharva & Rameshwar Sarkale  
 ✅ Services: Web Development, Design, Portfolio Sites  
 ✅ Location: India  
 ✅ Skills & Technologies listed  
