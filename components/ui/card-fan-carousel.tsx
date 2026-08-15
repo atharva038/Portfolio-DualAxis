@@ -204,8 +204,8 @@ export default function SocialCards({ cards }: SocialCardsProps) {
         const base = config(slot);
         let targetX = base.x * mult;
         let targetY = base.y * hM;
-        let targetRot = base.rot;
-        let targetScale = base.scale;
+        const targetRot = base.rot;
+        const targetScale = base.scale;
         let delay = 0;
 
         if (hoveredSlot !== null) {
