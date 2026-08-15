@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
@@ -18,7 +20,6 @@ export default function Contact() {
     setSubmitStatus('idle');
 
     try {
-      // EmailJS configuration
       const serviceId = 'service_im12pji';
       const templateId = 'template_llw2pyt';
       const publicKey = 'gCfpr50F88PRPOQbK';
@@ -36,7 +37,6 @@ export default function Contact() {
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
       
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
       console.error('EmailJS Error:', error);
@@ -56,7 +56,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div className="space-y-6 lg:space-y-8">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-[#3F3A34] dark:text-white">
-              Let's talk about<br />
+              Let&apos;s talk about<br />
               your project
             </h2>
             <p className="text-lg text-[#6B645C] dark:text-[#B3B3B3] leading-relaxed">
@@ -155,10 +155,9 @@ export default function Contact() {
               )}
             </button>
 
-            {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="p-4 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-xl text-green-800 dark:text-green-300 text-sm">
-                ✓ Message sent successfully! We'll get back to you soon.
+                ✓ Message sent successfully! We&apos;ll get back to you soon.
               </div>
             )}
             

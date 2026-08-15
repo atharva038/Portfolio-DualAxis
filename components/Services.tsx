@@ -67,19 +67,15 @@ export default function Services() {
           </p>
         </div>
         
-        {/* Core Services */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto mb-20 md:mb-28 lg:mb-32">
           {services.map((service, index) => (
             <div 
               key={index} 
               className="group relative p-8 lg:p-10 bg-[#FAF7F2] dark:bg-[#18181B] rounded-3xl border border-[#E6DED3] dark:border-[#2A2A2E] transition-all duration-500 hover:border-[#C07A3D] dark:hover:border-[#C6A75E] hover:shadow-2xl hover:shadow-[#C07A3D]/10 dark:hover:shadow-[#C6A75E]/10 hover:-translate-y-1 cursor-pointer overflow-hidden"
             >
-              {/* Subtle gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#C07A3D]/0 to-[#C07A3D]/0 group-hover:from-[#C07A3D]/5 group-hover:to-transparent dark:group-hover:from-[#C6A75E]/5 transition-all duration-500 rounded-3xl pointer-events-none"></div>
               
-              {/* Content */}
               <div className="relative z-10">
-                {/* Icon and number */}
                 <div className="flex items-start justify-between mb-6">
                   <span className="text-4xl text-[#C07A3D] dark:text-[#C6A75E] transition-transform duration-500 group-hover:scale-110 inline-block">
                     {service.icon}
@@ -89,26 +85,21 @@ export default function Services() {
                   </span>
                 </div>
                 
-                {/* Title */}
                 <h3 className="text-2xl lg:text-3xl font-medium text-[#3F3A34] dark:text-white mb-4 group-hover:text-[#C07A3D] dark:group-hover:text-[#C6A75E] transition-colors duration-300">
                   {service.title}
                 </h3>
                 
-                {/* Description */}
                 <p className="text-base lg:text-lg text-[#6B645C] dark:text-[#B3B3B3] leading-relaxed">
                   {service.description}
                 </p>
               </div>
               
-              {/* Decorative corner accent */}
               <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-[#C07A3D]/0 to-transparent group-hover:from-[#C07A3D]/10 dark:group-hover:from-[#C6A75E]/10 transition-all duration-500 rounded-tl-full pointer-events-none"></div>
             </div>
           ))}
         </div>
 
-        {/* Advanced Full-Stack Capabilities */}
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C07A3D]/10 dark:bg-[#C6A75E]/10 text-[#C07A3D] dark:text-[#C6A75E] text-sm font-medium mb-6">
               <span className="inline-block w-2 h-2 bg-[#C07A3D] dark:bg-[#C6A75E] rounded-full animate-pulse"></span>
@@ -118,39 +109,33 @@ export default function Services() {
               Beyond beautiful websites
             </h3>
             <p className="text-lg md:text-xl text-[#6B645C] dark:text-[#B3B3B3] leading-relaxed max-w-3xl mx-auto">
-              We're currently focused on portfolios and showcase websites, but we also build comprehensive business management systems tailored to your operational needs.
+              We&apos;re currently focused on portfolios and showcase websites, but we also build comprehensive business management systems tailored to your operational needs.
             </p>
           </div>
 
-          {/* Advanced Capabilities Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {advancedCapabilities.map((capability, index) => (
               <div 
                 key={index}
                 className="group relative p-6 lg:p-8 bg-gradient-to-br from-[#FAF7F2] to-[#F5F0E8] dark:from-[#18181B] dark:to-[#1F1F23] rounded-2xl border border-[#E6DED3] dark:border-[#2A2A2E] transition-all duration-300 hover:border-[#C07A3D] dark:hover:border-[#C6A75E] hover:shadow-xl hover:shadow-[#C07A3D]/5 dark:hover:shadow-[#C6A75E]/5 hover:-translate-y-1 cursor-pointer"
               >
-                {/* Icon */}
                 <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110">
                   {capability.icon}
                 </div>
                 
-                {/* Title */}
                 <h4 className="text-xl font-medium text-[#3F3A34] dark:text-white mb-3 group-hover:text-[#C07A3D] dark:group-hover:text-[#C6A75E] transition-colors duration-300">
                   {capability.title}
                 </h4>
                 
-                {/* Description */}
                 <p className="text-sm lg:text-base text-[#6B645C] dark:text-[#B3B3B3] leading-relaxed">
                   {capability.description}
                 </p>
 
-                {/* Bottom accent line */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C07A3D]/0 to-transparent group-hover:via-[#C07A3D]/50 dark:group-hover:via-[#C6A75E]/50 transition-all duration-500 rounded-b-2xl"></div>
               </div>
             ))}
           </div>
 
-          {/* Call to Action */}
           <div className="mt-16 md:mt-20 text-center">
             <div className="inline-flex flex-col items-center gap-4 p-8 lg:p-10 bg-gradient-to-br from-[#C07A3D]/5 to-transparent dark:from-[#C6A75E]/5 rounded-3xl border border-[#C07A3D]/20 dark:border-[#C6A75E]/20">
               <p className="text-lg md:text-xl text-[#3F3A34] dark:text-white font-medium">

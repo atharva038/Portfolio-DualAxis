@@ -1,5 +1,4 @@
-import atharvaImg from '../assets/atharva.png';
-import nanduImg from '../assets/nandu.jpeg';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -12,7 +11,7 @@ export default function About() {
               simple things that work.
             </h2>
             <p className="text-lg text-[#6B645C] dark:text-[#B3B3B3] leading-relaxed">
-              We're a two-person freelance team building calm, 
+              We&apos;re a two-person freelance team building calm, 
               practical websites for studios and local businesses.
             </p>
             <p className="text-lg text-[#6B645C] dark:text-[#B3B3B3] leading-relaxed">
@@ -26,11 +25,13 @@ export default function About() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <div className="aspect-square rounded-2xl overflow-hidden bg-[#E8E2D9] dark:bg-[#1F1F23]">
-                <img 
-                  src={atharvaImg} 
+              <div className="aspect-square rounded-2xl overflow-hidden bg-[#E8E2D9] dark:bg-[#1F1F23] relative">
+                <Image 
+                  src="/images/atharva.png"
                   alt="Atharva Sachin Joshi"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
               <div>
@@ -44,11 +45,13 @@ export default function About() {
             </div>
             
             <div className="space-y-4">
-              <div className="aspect-square rounded-2xl overflow-hidden bg-[#E8E2D9] dark:bg-[#1F1F23]">
-                <img 
-                  src={nanduImg} 
+              <div className="aspect-square rounded-2xl overflow-hidden bg-[#E8E2D9] dark:bg-[#1F1F23] relative">
+                <Image 
+                  src="/images/nandu.jpeg"
                   alt="Nandkishor Jadhav"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
               </div>
               <div>

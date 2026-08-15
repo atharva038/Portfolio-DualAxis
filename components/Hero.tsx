@@ -1,7 +1,8 @@
+'use client';
+
 export default function Hero() {
   return (
     <section className="hero-section pt-32 pb-16 md:pt-40 md:pb-24 lg:pt-44 lg:pb-32 relative overflow-hidden">
-      {/* Subtle texture overlay */}
       <div className="hero-texture absolute inset-0 pointer-events-none opacity-30 dark:opacity-20"></div>
       
       <div className="container relative z-10">

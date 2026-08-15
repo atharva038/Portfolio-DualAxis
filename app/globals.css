@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F5EFE6;
@@ -118,7 +118,6 @@ body.dark .hero-section {
 /* Beige paper texture for light mode */
 .hero-texture {
   background-image: 
-    /* Paper grain effect */
     repeating-linear-gradient(
       0deg,
       rgba(209, 196, 179, 0.03) 0px,
@@ -133,7 +132,6 @@ body.dark .hero-section {
       transparent 2px,
       rgba(209, 196, 179, 0.03) 3px
     ),
-    /* Subtle noise */
     repeating-linear-gradient(
       45deg,
       rgba(209, 196, 179, 0.02) 0px,
@@ -141,7 +139,6 @@ body.dark .hero-section {
       transparent 1px,
       transparent 3px
     ),
-    /* Soft gradient overlay */
     radial-gradient(
       ellipse at top left,
       rgba(232, 226, 217, 0.4) 0%,
@@ -159,7 +156,6 @@ body.dark .hero-section {
 /* Charcoal grain texture for dark mode */
 body.dark .hero-texture {
   background-image: 
-    /* Charcoal grain effect */
     repeating-linear-gradient(
       0deg,
       rgba(40, 40, 44, 0.4) 0px,
@@ -174,7 +170,6 @@ body.dark .hero-texture {
       transparent 2px,
       rgba(40, 40, 44, 0.4) 3px
     ),
-    /* Subtle noise */
     repeating-linear-gradient(
       135deg,
       rgba(50, 50, 55, 0.3) 0px,
@@ -182,7 +177,6 @@ body.dark .hero-texture {
       transparent 1px,
       transparent 3px
     ),
-    /* Soft gradient overlay */
     radial-gradient(
       ellipse at top left,
       rgba(31, 31, 35, 0.5) 0%,

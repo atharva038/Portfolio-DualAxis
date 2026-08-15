@@ -1,3 +1,5 @@
+'use client';
+
 const projects = [
   {
     id: 1,
@@ -22,7 +24,7 @@ export default function Projects() {
             Recent work
           </h2>
           <p className="text-lg text-[#6B645C] dark:text-[#B3B3B3]">
-            Selected projects we're proud of.
+            Selected projects we&apos;re proud of.
           </p>
         </div>
         
