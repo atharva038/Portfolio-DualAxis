@@ -39,10 +39,10 @@ function getStoredTheme(): Theme {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const theme = useSyncExternalStore(subscribeTheme, getStoredTheme, () => 'light');
+  const theme = useSyncExternalStore<Theme>(subscribeTheme, getStoredTheme, () => 'light');
   const [overrideTheme, setOverrideTheme] = useState<Theme | null>(null);
 
-  const activeTheme = overrideTheme || theme;
+  const activeTheme: Theme = overrideTheme || theme;
 
   useEffect(() => {
     if (activeTheme === 'dark') {
