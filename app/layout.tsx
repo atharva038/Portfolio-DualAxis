@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Geist } from 'next/font/google';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { LanguageProvider } from '@/context/LanguageContext';
+import LanguageModal from '@/components/LanguageModal';
 import './globals.css';
 import { cn } from "@/lib/utils";
 
@@ -136,8 +138,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={inter.variable}>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className={inter.variable} suppressHydrationWarning>
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+            <LanguageModal />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

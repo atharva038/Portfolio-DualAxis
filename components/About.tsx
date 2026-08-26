@@ -4,23 +4,26 @@ import Image from 'next/image';
 import { BlurFade } from '@/components/ui/blur-fade';
 import { ShineBorder } from '@/components/ui/shine-border';
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
-
-const team = [
-  {
-    src: '/images/atharva.png',
-    name: 'Atharva Sachin Joshi',
-    role: 'Developer',
-    imageClass: 'object-cover object-[center_22%]',
-  },
-  {
-    src: '/images/Ram.jpeg',
-    name: 'Rameshwar Madhav Sarkale',
-    role: 'Developer',
-    imageClass: 'object-cover object-[center_8%]',
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function About() {
+  const { t, language } = useLanguage();
+
+  const team = [
+    {
+      src: '/images/atharva.png',
+      name: language === 'mr' ? 'अथर्व सचिन जोशी' : 'Atharva Sachin Joshi',
+      role: t.about.teamAtharvaRole,
+      imageClass: 'object-cover object-[center_22%]',
+    },
+    {
+      src: '/images/Ram.jpeg',
+      name: language === 'mr' ? 'रामेश्वर माधव सरकाळे' : 'Rameshwar Madhav Sarkale',
+      role: t.about.teamRameshwarRole,
+      imageClass: 'object-cover object-[center_8%]',
+    },
+  ];
+
   return (
     <section id="about" className="relative overflow-hidden bg-[#FAF7F2] py-16 transition-colors duration-300 dark:bg-[#18181B] md:py-24 lg:py-32">
       <div className="pointer-events-none absolute top-16 right-0 h-72 w-72 rounded-full bg-[#C07A3D]/8 blur-3xl dark:bg-[#C6A75E]/10" />
@@ -30,31 +33,30 @@ export default function About() {
           <div className="space-y-6">
             <BlurFade inView delay={0.1}>
               <h2 className="text-4xl font-medium leading-tight tracking-tight text-[#3F3A34] dark:text-white md:text-5xl lg:text-6xl">
-                A small team, focused on
+                {t.about.titlePart1}
                 <br />
-                simple things that{' '}
+                {t.about.titlePart2}{' '}
                 <AnimatedGradientText colorFrom="#C07A3D" colorTo="#D4B86A">
-                  work
+                  {t.about.titlePart3}
                 </AnimatedGradientText>
                 .
               </h2>
             </BlurFade>
             <BlurFade inView delay={0.2}>
               <p className="text-lg leading-relaxed text-[#6B645C] dark:text-[#B3B3B3]">
-                We&apos;re a two-person freelance team building calm,
-                practical websites for studios and local businesses.
+                {t.about.desc1}
               </p>
             </BlurFade>
             <BlurFade inView delay={0.3}>
               <p className="text-lg leading-relaxed text-[#6B645C] dark:text-[#B3B3B3]">
-                No noise, no unnecessary complexity —
+                {t.about.desc2Part1}
                 <br />
-                just work that feels right.
+                {t.about.desc2Part2}
               </p>
             </BlurFade>
             <BlurFade inView delay={0.4}>
               <span className="mt-4 block text-sm italic text-[#9A948C] dark:text-[#6B6B6B]">
-                — Atharva & Rameshwar
+                {language === 'mr' ? '— अथर्व आणि रामेश्वर' : '— Atharva & Rameshwar'}
               </span>
             </BlurFade>
           </div>

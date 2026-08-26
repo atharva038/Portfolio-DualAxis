@@ -8,11 +8,13 @@ import { BlurFade } from '@/components/ui/blur-fade';
 import { AnimatedGradientText } from '@/components/ui/animated-gradient-text';
 import { BorderBeam } from '@/components/ui/border-beam';
 import { ShineBorder } from '@/components/ui/shine-border';
+import { useLanguage } from '@/context/LanguageContext';
 
 const inputClass =
   'w-full rounded-xl border border-[#E6DED3] bg-[#F5EFE6] px-5 py-4 text-[#3F3A34] placeholder:text-[#9A948C] outline-none transition-all duration-300 focus:border-[#C07A3D] focus:shadow-[0_0_0_4px_rgba(192,122,61,0.12)] dark:border-[#2A2A2E] dark:bg-[#0E0E10] dark:text-white dark:placeholder:text-[#6B6B6B] dark:focus:border-[#C6A75E] dark:focus:shadow-[0_0_0_4px_rgba(198,167,94,0.18)]';
 
 export default function Contact() {
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -53,7 +55,12 @@ export default function Contact() {
     }
   };
 
-  const whatsappLink = `https://wa.me/919156906881?text=${encodeURIComponent("Hi! I came across Dual Axis and I'm interested in discussing a website project. Can we chat?")}`;
+  const whatsappMessage =
+    language === 'mr'
+      ? 'नमस्कार! मी Dual Axis वेबसाइट पाहिली आणि मला नवीन वेबसाइट प्रकल्पाबद्दल बोलायचे आहे.'
+      : "Hi! I came across Dual Axis and I'm interested in discussing a website project. Can we chat?";
+
+  const whatsappLink = `https://wa.me/919156906881?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <section id="contact" className="relative overflow-hidden bg-[#FAF7F2] py-16 transition-colors duration-300 dark:bg-[#18181B] md:py-24 lg:py-32">
@@ -65,20 +72,18 @@ export default function Contact() {
           <div className="space-y-6 lg:space-y-8">
             <BlurFade inView delay={0.1}>
               <h2 className="text-4xl font-medium leading-tight tracking-tight text-[#3F3A34] dark:text-white md:text-5xl lg:text-6xl">
-                Let&apos;s talk about
+                {t.contact.headingPart1}
                 <br />
-                your{' '}
+                {t.contact.headingPart2}{' '}
                 <AnimatedGradientText colorFrom="#C07A3D" colorTo="#D4B86A">
-                  project
+                  {t.contact.headingAccent}
                 </AnimatedGradientText>
               </h2>
             </BlurFade>
 
             <BlurFade inView delay={0.2}>
               <p className="text-lg leading-relaxed text-[#6B645C] dark:text-[#B3B3B3]">
-                No pressure, no commitment —
-                <br />
-                just a friendly conversation.
+                {t.contact.subtitle}
               </p>
             </BlurFade>
 
@@ -94,12 +99,15 @@ export default function Contact() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Chat on WhatsApp
+                {t.contact.whatsappBtn}
               </motion.a>
             </BlurFade>
 
             <BlurFade inView delay={0.4}>
-              <span className="block text-sm text-[#9A948C] dark:text-[#6B6B6B]">or send a message</span>
+              <div className="space-y-1 text-sm text-[#9A948C] dark:text-[#6B6B6B]">
+                <p>⚡ {t.contact.directChat}</p>
+                <p>⏱️ {t.contact.responseSpeed}</p>
+              </div>
             </BlurFade>
           </div>
 
@@ -110,9 +118,9 @@ export default function Contact() {
 
               <form className="relative space-y-5 rounded-[1.35rem] bg-[#F5EFE6] p-6 dark:bg-[#0E0E10] md:space-y-6 md:p-8" onSubmit={handleSubmit}>
                 {([
-                  { id: 'name', type: 'text', placeholder: 'Name' },
-                  { id: 'email', type: 'email', placeholder: 'Email' },
-                  { id: 'phone', type: 'tel', placeholder: 'Phone Number' },
+                  { id: 'name', type: 'text', placeholder: t.contact.namePlaceholder },
+                  { id: 'email', type: 'email', placeholder: t.contact.emailPlaceholder },
+                  { id: 'phone', type: 'tel', placeholder: t.contact.phonePlaceholder },
                 ] as const).map((field, index) => (
                   <motion.div
                     key={field.id}
@@ -130,7 +138,7 @@ export default function Contact() {
                       onChange={(e) => setFormData({ ...formData, [field.id]: e.target.value })}
                       onFocus={() => setFocused(field.id)}
                       onBlur={() => setFocused(null)}
-                      required
+                      required={field.id !== 'phone'}
                       placeholder={field.placeholder}
                     />
                     <AnimatePresence>
@@ -162,7 +170,7 @@ export default function Contact() {
                     onBlur={() => setFocused(null)}
                     required
                     rows={4}
-                    placeholder="Tell us about your project"
+                    placeholder={t.contact.messagePlaceholder}
                   />
                 </motion.div>
 
@@ -192,10 +200,10 @@ export default function Contact() {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
-                        Sending...
+                        {t.contact.submittingBtn}
                       </>
                     ) : (
-                      'Send message'
+                      t.contact.submitBtn
                     )}
                   </span>
                 </motion.button>
@@ -209,7 +217,7 @@ export default function Contact() {
                       exit={{ opacity: 0, y: -8 }}
                       className="rounded-xl border border-emerald-300/70 bg-emerald-100 p-4 text-sm text-emerald-800 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300"
                     >
-                      ✓ Message sent successfully! We&apos;ll get back to you soon.
+                      ✓ {t.contact.successMessage}
                     </motion.div>
                   )}
                   {submitStatus === 'error' && (
@@ -220,7 +228,7 @@ export default function Contact() {
                       exit={{ opacity: 0, y: -8 }}
                       className="rounded-xl border border-red-300/70 bg-red-100 p-4 text-sm text-red-800 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300"
                     >
-                      ✗ Failed to send message. Please try WhatsApp or email directly.
+                      ✗ {t.contact.errorMessage}
                     </motion.div>
                   )}
                 </AnimatePresence>
