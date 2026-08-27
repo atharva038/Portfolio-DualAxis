@@ -23,7 +23,7 @@ export default function Services() {
       <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#C07A3D]/8 blur-3xl dark:bg-[#C6A75E]/8" />
 
       <div className="container relative z-10">
-        <div className="max-w-6xl mx-auto space-y-16 md:space-y-20">
+        <div className="max-w-7xl mx-auto space-y-16 md:space-y-20">
           {/* Header */}
           <div className="space-y-4">
             <BlurFade inView delay={0.1}>

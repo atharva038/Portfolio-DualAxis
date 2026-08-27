@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useSyncExternalStore } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTheme } from '@/context/ThemeContext';
 import { useLanguage } from '@/context/LanguageContext';
@@ -10,12 +11,14 @@ import { Menu, X, Sun, Moon, ArrowUpRight } from 'lucide-react';
 const emptySubscribe = () => () => {};
 
 export default function Header() {
+  const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>('');
+  const homePrefix = pathname === '/' ? '' : '/';
 
   const isMounted = useSyncExternalStore(
     emptySubscribe,
@@ -64,7 +67,7 @@ export default function Header() {
         layout
         transition={{ duration: 0.3, ease: 'easeOut' }}
         className={`
-          mx-auto max-w-5xl
+          mx-auto max-w-[1400px]
           bg-[#F5EFE6] dark:bg-[#18181C]
           border border-[#DFD3C3] dark:border-[#2B2B32]
           shadow-[0_4px_20px_rgba(50,40,30,0.06)] dark:shadow-[0_6px_28px_rgba(0,0,0,0.45)]
@@ -79,7 +82,7 @@ export default function Header() {
         <div className="flex items-center justify-between relative z-10">
           {/* Brand Logo with Matte Presentation & Status Dot */}
           <a
-            href="#"
+            href={pathname === '/' ? '#' : '/'}
             className="group flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]"
           >
             {/* Transparent Official Logo Mark */}
@@ -117,7 +120,7 @@ export default function Header() {
               return (
                 <a
                   key={link.id}
-                  href={link.href}
+                  href={`${homePrefix}${link.href}`}
                   onMouseEnter={() => setHoveredNav(link.id)}
                   className={`
                     relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-full
@@ -195,7 +198,7 @@ export default function Header() {
 
             {/* Quick Contact CTA Button */}
             <a
-              href="#contact"
+              href={`${homePrefix}#contact`}
               className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-[#C07A3D] px-4 py-2 text-xs font-semibold text-white shadow-[0_2px_10px_rgba(192,122,61,0.25)] transition-all duration-200 hover:bg-[#A86930] hover:-translate-y-0.5 dark:bg-[#C6A75E] dark:text-[#0E0E10] dark:shadow-[0_2px_10px_rgba(198,167,94,0.2)] dark:hover:bg-[#D4B86A]"
             >
               <span>{language === 'mr' ? 'संवाद साधा' : "Let's Talk"}</span>
@@ -222,13 +225,13 @@ export default function Header() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden mt-2.5 mx-auto max-w-5xl overflow-hidden rounded-3xl border border-[#DFD3C3] bg-[#F5EFE6] p-4 shadow-xl dark:border-[#2B2B32] dark:bg-[#18181C]"
+            className="md:hidden mt-2.5 mx-auto max-w-[1400px] overflow-hidden rounded-3xl border border-[#DFD3C3] bg-[#F5EFE6] p-4 shadow-xl dark:border-[#2B2B32] dark:bg-[#18181C]"
           >
             <nav className="flex flex-col gap-1 relative z-10">
               {navLinks.map((link) => (
                 <a
                   key={link.id}
-                  href={link.href}
+                  href={`${homePrefix}${link.href}`}
                   className="flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] font-medium text-[#3F3A34] transition-colors hover:bg-[#EBE2D4] hover:text-[#C07A3D] dark:text-white dark:hover:bg-[#24242A] dark:hover:text-[#E0C782]"
                   onClick={closeMobileMenu}
                 >
@@ -239,7 +242,7 @@ export default function Header() {
 
               <div className="mt-2 pt-3 border-t border-[#DFD3C3] dark:border-[#2B2B32]">
                 <a
-                  href="#contact"
+                  href={`${homePrefix}#contact`}
                   onClick={closeMobileMenu}
                   className="flex items-center justify-center gap-2 rounded-2xl bg-[#C07A3D] px-4 py-3 text-sm font-semibold text-white shadow-md dark:bg-[#C6A75E] dark:text-black"
                 >

@@ -110,20 +110,17 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#F5EFE6] dark:bg-[#0E0E10] pt-28 pb-16 md:pt-36 md:pb-24 transition-colors duration-300">
-      {/* Background Graphic Grid / Dots */}
       <DotPattern
         className="text-[#C07A3D]/25 dark:text-[#C6A75E]/18 [mask-image:radial-gradient(900px_circle_at_center,white,transparent)] pointer-events-none"
       />
       <BackgroundBeams className="opacity-30 dark:opacity-20 pointer-events-none" />
 
-      {/* Atmospheric Ambient Depth Orbs */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[34rem] w-full max-w-4xl rounded-full bg-gradient-to-b from-[#C07A3D]/15 via-[#D4B86A]/10 to-transparent blur-3xl dark:from-[#C6A75E]/15 dark:via-[#C07A3D]/10" />
       <div className="pointer-events-none absolute top-24 left-[6%] h-80 w-80 rounded-full bg-[#C07A3D]/10 blur-3xl dark:bg-[#C6A75E]/8" />
       <div className="pointer-events-none absolute bottom-16 right-[6%] h-96 w-96 rounded-full bg-[#C07A3D]/10 blur-3xl dark:bg-[#C6A75E]/8" />
 
       <div className="container relative z-20 mx-auto px-4">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-7 md:space-y-8">
-          {/* Top Pill Badge */}
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-7 md:space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,7 +135,6 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0.4, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,7 +151,6 @@ export default function Hero() {
             </AnimatedGradientText>
           </motion.h1>
 
-          {/* Dynamic rotating subtitle */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -170,7 +165,6 @@ export default function Hero() {
             />
           </motion.div>
 
-          {/* Subtitle Description */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -180,7 +174,6 @@ export default function Hero() {
             {t.hero.description}
           </motion.p>
 
-          {/* Primary Action CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -202,7 +195,6 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Interactive Client Deployment Explorer Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -231,7 +223,7 @@ export default function Hero() {
                     className={`relative flex items-center justify-center gap-2 rounded-xl border p-2.5 text-xs font-medium transition-all duration-200 ${
                       isSelected
                         ? 'border-[#C07A3D]/50 bg-white shadow-sm dark:border-[#C6A75E]/50 dark:bg-[#1E1E26] text-[#3F3A34] dark:text-white'
-                        : 'border-[#E6DED3]/70 bg-white/40 hover:bg-white hover:border-[#C07A3D]/30 dark:border-[#2A2A2E]/70 dark:bg-white/5 dark:hover:bg-white/10 text-[#6B645C] dark:text-[#A1A1AA]'
+                        : 'border-[#E6DED3]/70 bg-white/40 hover:border-[#C07A3D]/30 hover:bg-white dark:border-[#2A2A2E]/70 dark:bg-white/5 dark:hover:bg-white/10 text-[#6B645C] dark:text-[#A1A1AA]'
                     }`}
                   >
                     <WorkIcon className="h-4 w-4 shrink-0 text-[#C07A3D] dark:text-[#C6A75E]" />
@@ -249,7 +241,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
-                className="rounded-2xl border border-[#E6DED3]/80 bg-white/70 p-4 sm:p-5 text-left backdrop-blur-xl shadow-xs dark:border-[#2A2A32] dark:bg-[#16161C]/80"
+                className="rounded-2xl border border-[#E6DED3]/80 bg-white/70 p-4 text-left shadow-xs backdrop-blur-xl sm:p-5 dark:border-[#2A2A32] dark:bg-[#16161C]/80"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E6DED3]/60 dark:border-[#2A2A32] pb-3">
                   <div className="space-y-0.5">

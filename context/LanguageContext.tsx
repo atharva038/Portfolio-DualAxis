@@ -100,6 +100,12 @@ export interface Translations {
     tagline: string;
     copyright: string;
     allRightsReserved: string;
+    termsLink: string;
+    contactTitle: string;
+    emailLabel: string;
+    phoneLabel: string;
+    quickLinksTitle: string;
+    location: string;
   };
   modal: {
     title: string;
@@ -253,6 +259,12 @@ export const translations: Record<Language, Translations> = {
       tagline: 'Websites that feel right.',
       copyright: 'Dual Axis. All rights reserved.',
       allRightsReserved: 'Crafted with care in Maharashtra, India.',
+      termsLink: 'Terms & Conditions',
+      contactTitle: 'Contact',
+      emailLabel: 'Email',
+      phoneLabel: 'Phone',
+      quickLinksTitle: 'Quick links',
+      location: 'Maharashtra, India',
     },
     modal: {
       title: 'Welcome to Dual Axis',
@@ -403,6 +415,12 @@ export const translations: Record<Language, Translations> = {
       tagline: 'मनाला भावणाऱ्या आणि योग्य काम करणाऱ्या वेबसाइट्स.',
       copyright: 'Dual Axis. सर्व हक्क राखीव.',
       allRightsReserved: 'महाराष्ट्रात आपुलकीने तयार केलेले.',
+      termsLink: 'अटी व शर्ती',
+      contactTitle: 'संपर्क',
+      emailLabel: 'ईमेल',
+      phoneLabel: 'फोन',
+      quickLinksTitle: 'द्रुत दुवे',
+      location: 'महाराष्ट्र, भारत',
     },
     modal: {
       title: 'ड्युअल ॲक्सिस मध्ये आपले स्वागत आहे',
