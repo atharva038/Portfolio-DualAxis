@@ -37,6 +37,13 @@ export default function Projects() {
           : 'Glow & Grace — Luxury Salon & Booking SaaS',
       linkUrl: 'https://beauty-parler.vercel.app/',
     },
+    {
+      alt:
+        language === 'mr'
+          ? 'जिम पोर्टफोलिओ — फिटनेस वेबसाइट'
+          : 'Gym Portfolio — Fitness Website',
+      linkUrl: 'https://gym-portfolio-theta.vercel.app/',
+    },
   ];
 
   return (
