@@ -199,7 +199,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="pt-6 sm:pt-8 w-full max-w-3xl space-y-4"
+            className="pt-6 sm:pt-8 w-full max-w-[50rem] space-y-4"
           >
             <div className="flex items-center justify-between px-2">
               <span className="text-xs uppercase tracking-widest text-[#9A948C] dark:text-[#6B6B6B] font-mono">
